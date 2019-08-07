@@ -5,7 +5,7 @@
 		</div>
 		<div class="rv-card-info">
 			<div class="rv-card-title">
-				【2.9元抢50000件，抢完恢复4.9元】 不沾油抹布厨房吸水不掉
+				【2.9元抢50000件，抢完恢复4.9元】 不沾油抹
 			</div>
 			<div class="rv-card-foot">
 				<div class="rv-card-price">
@@ -47,8 +47,8 @@
 		background: #fff;
 		display: flex;
 		box-shadow: #f2f2f2 5px 5px;
-		// border: 1px solid #ddd;
-		margin-bottom: 6px;
+		margin-bottom: 10px;
+		border-radius: 8px;
 
 		.rv-img{
 			margin-right: 10px;

@@ -3,9 +3,9 @@
 
     .rv-search-wrap{
         width: 100%;
-        position: fixed;
-        top: 0;
+        position: relative;
         z-index: 99999;
+        margin-bottom: 8px;
         .rv-search{
             width: 90%;
             height: 38px;
@@ -17,27 +17,23 @@
             padding: 0 10px;
             box-sizing: border-box;
             border-radius: 8px;
+            color: rgba(0, 0, 0, 0.5);
             
             img{
                 width: 15px;
                 height: 15px;
                 margin-right: 10px;
             }
-            input{
-                flex-grow: 1;
-                height: 38px;
-                line-height: 38px;
-            }
         }
     }
 
     .rv-tabs{
         width: 100%;
-        margin-top: 45px;
+        // margin-top: 45px;
 
         .rv-block{
             width: 100%;
-            padding: 0 20px;
+            padding: 10px;
             box-sizing: border-box;
             background: #f2f2f2;
         }

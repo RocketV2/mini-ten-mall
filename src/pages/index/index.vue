@@ -4,19 +4,27 @@
 		<div class="rv-search-wrap">
 			<div class="rv-search">
 				<img src="/static/images/search.png" alt="">
-				<input type="text" placeholder="搜索商品" maxlength="30" disabled>
+				<span>搜索商品</span>
 			</div>
 		</div>
 
 		<!-- tab标签分类 -->
 		<div class="rv-tabs">
-			<van-tabs active="activeTab" @change="swicthTab">
-				<van-tab class="rv-block" title="精选">
-					<block v-for="item in [1,2,3,4,5,6]" :key="item">
-						<goodsCard />
-					</block>
+			<van-tabs active="activeTab" swipeable sticky @change="swicthTab">
+				<van-tab title="精选">
+					<div class="rv-block">
+						<block v-for="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" :key="item">
+							<goodsCard />
+						</block>
+					</div>
 				</van-tab>
-				<van-tab title="清仓">内容 2</van-tab>
+				<van-tab title="清仓">
+					<div class="rv-block">
+						<block v-for="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]" :key="item">
+							<goodsCard />
+						</block>
+					</div>
+				</van-tab>
 				<van-tab title="百货">百货 3</van-tab>
 				<van-tab title="母婴">母婴 4</van-tab>
 				<van-tab title="食品">食品 4</van-tab>
@@ -62,6 +70,10 @@
 		// 下拉刷新
 		onPullDownRefresh(){
 			wx.stopPullDownRefresh()
+			wx.showNavigationBarLoading()
+			setInterval(() => {
+				wx.hideNavigationBarLoading()
+			},1000)
 		},
 
 		// 下拉加载

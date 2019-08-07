@@ -3,6 +3,7 @@
     "enablePullDownRefresh": true,
     "backgroundColor": "#fff",
     "disableScroll": false,
+    "backgroundTextStyle": "dark",
     "usingComponents": {
       "van-tab": "/static/vant/tab/index",
       "van-tabs": "/static/vant/tabs/index"
