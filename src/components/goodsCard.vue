@@ -1,16 +1,16 @@
 <template>
 	<div class="rv-goods-card">
 		<div class="rv-img">
-			<img src="/static/images/test.jpeg" alt="">
+			<img :src="data.goods_thumbnail_url" lazy-load alt="">
 		</div>
 		<div class="rv-card-info">
 			<div class="rv-card-title">
-				【2.9元抢50000件，抢完恢复4.9元】 不沾油抹
+				{{data.goods_name}}
 			</div>
 			<div class="rv-card-foot">
 				<div class="rv-card-price">
 					<span>￥</span>
-					<span>10.90</span>
+					<span>{{data.min_normal_price/1000}}</span>
 				</div>
 				<div class="rv-card-btn">去购买</div>
 			</div>
@@ -20,7 +20,7 @@
 
 <script>
 	export default {
-		props: ['text'],
+		props: ['data'],
 
 		data(){
 			return {
@@ -29,7 +29,6 @@
 		},
 
 		onLoad(){
-
 		},
 
 		methods:{
@@ -46,7 +45,7 @@
 		box-sizing: border-box;
 		background: #fff;
 		display: flex;
-		box-shadow: #f2f2f2 5px 5px;
+		box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 		margin-bottom: 10px;
 		border-radius: 8px;
 
@@ -70,7 +69,7 @@
 				justify-content: space-between;
 				align-items: center;
 				.rv-card-price{
-					color: #f00;
+					color: #f6332f;
 					span:first-child{
 						font-size: 12px;
 					}

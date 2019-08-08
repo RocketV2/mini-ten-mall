@@ -1,7 +1,7 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -20,12 +20,14 @@
 		}
 	},
 	"miniprogramRoot": "dist/wx/",
+	"cloudfunctionRoot": "cloudfunctions/",
 	"compileType": "miniprogram",
-	"appid": "wx39ea61c49fe12ac8",
+	"appid": "wx9b2ed1ecc1140ec3",
 	"projectname": "mini-ten-mall",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"libVersion": "2.8.0",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

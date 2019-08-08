@@ -1,6 +1,7 @@
 {
-    "navigationBarTitleText": "十元超市",
+    "navigationBarTitleText": "十元百货",
     "enablePullDownRefresh": true,
+    "onReachBottomDistance": 100,
     "backgroundColor": "#fff",
     "disableScroll": false,
     "backgroundTextStyle": "dark",

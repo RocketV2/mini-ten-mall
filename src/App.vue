@@ -9,6 +9,9 @@
 			* 百度：mpvue === swan, mpvuePlatform === 'swan'
 			* 支付宝(蚂蚁)：mpvue === my, mpvuePlatform === 'my'
 			*/
+			wx.cloud && wx.cloud.init({
+				// env: 'test-x1dzi'
+			})
 		},
 
 	}
