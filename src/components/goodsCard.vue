@@ -12,7 +12,7 @@
 					<span>￥</span>
 					<span>{{data.min_normal_price/1000}}</span>
 				</div>
-				<div class="rv-card-btn">去购买</div>
+				<div class="rv-card-btn" @click="bindDetail">去购买</div>
 			</div>
 		</div>
 	</div>
@@ -32,7 +32,11 @@
 		},
 
 		methods:{
-
+			bindDetail(){
+				mpvue.navigateTo({
+					url: `/pages/index-detail/main?id=${this.data.goods_id}`
+				});
+			},
 		},
 	}
 </script>

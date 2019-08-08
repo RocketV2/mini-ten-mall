@@ -131,7 +131,6 @@
 		methods: {
 			// 切换tab
 			swicthTab(event){
-				console.log('切换tabs',event)
 				const { index, } = event && event.mp.detail;
 				const opt_id = this.goods_opt_list[index].id;
 				this.opt_id = opt_id;

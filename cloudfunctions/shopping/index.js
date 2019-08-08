@@ -21,6 +21,8 @@ exports.main = async (event, context) => {
 			return getOptList()
 		case "pdd.ddk.goods.search": // 商品列表 根据opt_id
 			return getGoodsList(event)
+		case "pdd.ddk.goods.detail": // 商品详情
+			return getGoodsDetail(event)
 
 		case "pdd.ddk.theme.list.get": // 主题列表查询
 			return getThemeList();
@@ -69,6 +71,26 @@ async function getGoodsList(event){
 		page_size: event.page_size,
 		range_list: JSON.stringify([{range_id: 1, range_from: "", range_to: 1000}]),// 筛选范围 券后价1-10元
 
+	}
+	const sign = createSign(params)
+	params.sign = sign;
+
+	return await request({
+		method: "POST",
+		uri: pinduoduoUrl,
+		body: params,
+		json: true,	
+	})
+}
+
+// 获取商品详情
+async function getGoodsDetail(event){
+	let params = {
+		type: "pdd.ddk.goods.detail",
+		client_id: "4947f05e4f3944b3ac85a5d9e839362f",
+		timestamp: (new Date()).getTime(), // 时间戳 s
+		data_type: "JSON",
+		goods_id_list: JSON.stringify([event.goods_id]), // 商品id
 	}
 	const sign = createSign(params)
 	params.sign = sign;
