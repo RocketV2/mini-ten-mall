@@ -1,0 +1,95 @@
+.rv-search{
+    width: 100%;
+
+    // 搜索
+    .rv-search-wrap{
+        width: 100%;
+        // margin-bottom: 8px;
+        padding: 10px;
+        box-sizing: border-box;
+        background: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .rv-search{
+            flex-grow: 1;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            background: #eeeeee;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            color: rgba(0, 0, 0, 0.5);
+            
+            img{
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+            }
+            input{
+                flex-grow: 1;
+            }
+        }
+        .rv-text{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+        }
+        .rv-text-red{
+            font-weight: 600;
+            color: rgb(235, 96, 96);
+        }
+    }
+
+    // 热搜标签
+    .rv-hot{
+        width: 100%;
+        background: #fff;
+        padding: 10px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        .rv-hot-title{
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .rv-hot-search{
+            width: 100%;
+            li{
+                padding: 5px 8px;
+                box-sizing: border-box;
+                border: 1px solid rgba(0,0,0,0.05);
+                border-radius: 5px;
+                float: left;
+                margin: 0 8px 8px 0;
+                font-size: 12x;
+                color: rgba(0,0,0,0.5);
+            }
+        }
+    
+    }
+
+    // 搜索列表
+    .rv-list{
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        border-top: 1px solid rgba(0,0,0,0.05);
+        background: #fff;
+    }
+
+    // 加载
+    .rv-loading{
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 12px;
+        color: #f6332f;
+    }
+    
+}

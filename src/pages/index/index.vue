@@ -3,7 +3,7 @@
 
 		<div class="rv-header">
 			<!-- 搜索框 -->
-			<div class="rv-search-wrap">
+			<div class="rv-search-wrap" @click="bindNavSearch">
 				<div class="rv-search">
 					<img src="/static/images/search.png" alt="">
 					<span>搜索商品</span>
@@ -198,6 +198,11 @@
 						}
 					});
 				});
+			},
+
+			// 搜索
+			bindNavSearch(){
+				mpvue.navigateTo({url: '/pages/search/main'})
 			},
 		},
 

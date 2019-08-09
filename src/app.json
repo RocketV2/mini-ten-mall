@@ -2,7 +2,13 @@
 	"pages": [
 		"pages/index/main",
 		"pages/index-detail/main",
+		"pages/search/main",
 		"pages/mine/main"
+	],
+	"navigateToMiniProgramAppIdList": [
+		"wx8c9673d92a308968",
+		"wxb3aba3a2593cb833",
+		"wx32540bd863b27570"
 	],
 	"window": {
 		"backgroundTextStyle": "light",
@@ -13,7 +19,7 @@
 	"tabBar": {
 		"color": "#999",
 		"backgroundColor": "#fafafa",
-		"selectedColor": "#333",
+		"selectedColor": "#ffcf5b",
 		"borderStyle": "white",
 
 		"list": [{
@@ -22,10 +28,10 @@
 			"iconPath": "static/tabs/home.png",
 			"selectedIconPath": "static/tabs/home-active.png"
 		}, {
-			"text": "订单",
+			"text": "我的",
 			"pagePath": "pages/mine/main",
-			"iconPath": "static/tabs/orders.png",
-			"selectedIconPath": "static/tabs/orders-active.png"
+			"iconPath": "static/tabs/mine.png",
+			"selectedIconPath": "static/tabs/mine-active.png"
 		}],
 		"position": "bottom"
 	}

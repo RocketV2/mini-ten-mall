@@ -13,7 +13,7 @@
 		<div class="rv-goods-info">
 			<div class="rv-price">
 				<span>￥</span>
-				<span>{{goods_detail.min_group_price/1000 || ''}}</span>
+				<span>{{goods_detail.min_group_price/100 || ''}}</span>
 				<span>起</span>
 			</div>
 			<div class="rv-name">{{goods_detail.goods_name}}</div>
@@ -42,12 +42,12 @@
 				<img src="/static/images/share.png" alt="">
 				<span>分享好友</span>
 			</button>
-			<li class="rv-bar-buy1">
-				<span>￥ {{goods_detail.min_normal_price/1000}}</span>
+			<li class="rv-bar-buy1" @click="bindNavToPinduoduo">
+				<span>￥ {{goods_detail.min_normal_price/100}}</span>
 				<span>单独购买</span>
 			</li>
-			<li class="rv-bar-buy2">
-				<span>￥ {{goods_detail.min_group_price/1000}}</span>
+			<li class="rv-bar-buy2" @click="bindNavToPinduoduo">
+				<span>￥ {{goods_detail.min_group_price/100}}</span>
 				<span>发起拼单</span>
 			</li>
 		</div>
@@ -128,7 +128,7 @@
 
 			// 返回上一页
 			bindBack(){
-				mpvue.navigateBack({ delta: 1})
+				mpvue.switchTab({ url: '/pages/index/main'})
 			}, 
 
 			// 获取更多
@@ -166,6 +166,32 @@
 							return 0; 
 						break; 
 				} 
+			},
+
+			// 跳转到拼多多
+			bindNavToPinduoduo(){
+				if(!this.goods_id){
+					return null
+				}
+
+				wx.cloud.callFunction({
+					name: "shopping",
+					data: {
+						action: "pdd.ddk.goods.promotion.url.generate",
+						goods_id: this.goods_id,
+					}
+				}).then(res => {
+					const { goods_promotion_url_list } = res && res.result && res.result.goods_promotion_url_generate_response;
+					const goods_pro = goods_promotion_url_list[0];
+					const { app_id, page_path, user_name, } = goods_pro.we_app_info; // 小程序信息
+					// 小程序跳转
+					wx.navigateToMiniProgram({
+						appId: app_id,
+						path: page_path,
+						envVersion: "release",
+						extraData: { user_name, },
+					});
+				})
 			},
 		},
 

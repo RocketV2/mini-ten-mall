@@ -66,12 +66,20 @@ async function getGoodsList(event){
 		client_id: "4947f05e4f3944b3ac85a5d9e839362f",
 		timestamp: (new Date()).getTime(), // 时间戳 s
 		data_type: "JSON",
-		opt_id: event.opt_id, // 商品标签类目id
 		page: event.page,
 		page_size: event.page_size,
-		range_list: JSON.stringify([{range_id: 1, range_from: "", range_to: 1000}]),// 筛选范围 券后价1-10元
-
+		// range_list: JSON.stringify([{range_id: 1, range_from: "", range_to: 1000}]),
 	}
+	if(!!event.opt_id){// 标签类目
+		params.opt_id = event.opt_id;
+	}
+	if(!!event.range_list){// 筛选范围 券后价1-10元
+		params.range_list = JSON.stringify([{range_id: 1, range_from: "", range_to: 1000}]) 
+	}
+	if(!!event.keyword){ // 关键字搜索
+		params.keyword = event.keyword;
+	}
+
 	const sign = createSign(params)
 	params.sign = sign;
 

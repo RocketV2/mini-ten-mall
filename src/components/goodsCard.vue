@@ -10,7 +10,7 @@
 			<div class="rv-card-foot">
 				<div class="rv-card-price">
 					<span>￥</span>
-					<span>{{data.min_normal_price/1000}}</span>
+					<span>{{data.min_group_price/100}}</span>
 				</div>
 				<div class="rv-card-btn">去购买</div>
 			</div>
