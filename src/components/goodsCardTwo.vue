@@ -1,5 +1,5 @@
 <template>
-	<div class="rv-goods-card" @click="bindDetail">
+	<div class="rv-goods-card-two" @click="bindDetail">
 		<div class="rv-img">
 			<img :src="data.goods_thumbnail_url" lazy-load alt="">
 		</div>
@@ -12,7 +12,6 @@
 					<span>￥</span>
 					<span>{{data.min_normal_price/1000}}</span>
 				</div>
-				<div class="rv-card-btn">去购买</div>
 			</div>
 		</div>
 	</div>
@@ -42,36 +41,43 @@
 </script>
 
 <style lang="less" scoped>
-	.rv-goods-card{
-		width: 100%;
-		height: 140px;
-		padding: 10px;
-		box-sizing: border-box;
+	.rv-goods-card-two{
+		width: 49%;
+		height: 280px;
 		background: #fff;
 		display: flex;
+		flex-direction: column;
 		box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
-		margin-bottom: 10px;
-		border-radius: 8px;
+		margin-bottom: 8px;
+		box-sizing: border-box;
+		// border-radius: 8px;
+		float: left;
+		margin-right: 2%;
 
 		.rv-img{
-			margin-right: 10px;
+			height: 150px;
+			margin-bottom: 10px;
 			img{
-				width: 120px;
-				height: 120px;
+				width: 100%;
+				height: 100%;
 			}
 		}
 		.rv-card-info{
-			flex-grow: 1;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
+			width: 100%;
+			height: 130px;
 			.rv-card-title{
-
+				height: 80px;
+				padding: 0 8px;
+				box-sizing: border-box;
+				overflow: hidden;
 			}
 			.rv-card-foot{
+				height: 50px;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				padding: 0 8px;
+				box-sizing: border-box;
 				.rv-card-price{
 					color: #f6332f;
 					span:first-child{
@@ -82,18 +88,10 @@
 						font-weight: 600;
 					}
 				}
-				.rv-card-btn{
-					font-size: 16px;
-					color: #fff;
-					padding: 8px 20px;
-					box-sizing: border-box;
-					border-radius: 20px;
-					background: linear-gradient(to right, #f6332f , #f85d32);
-				}
-				.rv-card-btn:active{
-					opacity: 0.6;
-				}
 			}
 		}
+	}
+	.rv-goods-card-two:nth-child(2n+2){
+		margin-right: 0;
 	}
 </style>
