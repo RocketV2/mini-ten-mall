@@ -3,7 +3,7 @@
 
 		<div class="rv-header">
 			<!-- 搜索框 -->
-			<div class="rv-search-wrap" @click="bindNavSearch">
+			<div class="rv-search-wrap" @click="bindNavSearch" style="display:none;">
 				<div class="rv-search">
 					<img src="/static/images/search.png" alt="">
 					<span>搜索商品</span>
@@ -13,7 +13,7 @@
 			<!-- tab标签分类 -->
 			<div class="rv-tabs">
 				<van-tabs active="activeTab" @change="swicthTab">
-					<block v-for="(item,sindex) in goods_opt_list" :key="item.id + sindex">
+					<block v-for="(item,index) in goods_opt_list" :key="item.id+index">
 						<van-tab :title="item.label"></van-tab>
 					</block>
 				</van-tabs>			
@@ -123,7 +123,7 @@
 
 		onShareAppMessage() {
 			return {
-				title: '十元百货',
+				title: '拼多多优惠券',
 				path: '/pages/index/main'
 			}
 		},
